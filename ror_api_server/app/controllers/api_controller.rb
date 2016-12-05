@@ -1,8 +1,8 @@
 class ApiController < ApplicationController
   def find
     #render :text => 'ok'
-    #xxx = BPUpdateWorker.new(  )
-    #xxx.perform("http://127.0.0.1:8888/")
+    xxx = BPUpdateWorker.new(  )
+    xxx.perform("http://127.0.0.1:8888/")
 
     element = Bpclient.find_by(params[:key] => params[:value] )
     if element

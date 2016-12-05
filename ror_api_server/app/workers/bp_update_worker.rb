@@ -20,7 +20,10 @@ class BPUpdateWorker
   def upsert
     @elements['content'].each { |element|
       obj = Bpclient.collection.find({id: element['id']})
-      if obj.count > 0
+
+      Bpclient.collection.insert_one(element)
+
+      if !obj.nil? and obj.count() > 0
         obj.update_one(element)
       else
         Bpclient.collection.insert_one(element)

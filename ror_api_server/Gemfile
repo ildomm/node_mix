@@ -12,4 +12,14 @@ gem 'mongoid', '~> 5'
 
 gem 'spring', :group => :development
 
-
+group :test do
+  gem "rspec"
+  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-sidekiq'
+  gem 'rspec_junit_formatter', '0.2.2'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'json_spec'
+  gem 'timecop'
+  gem 'guard-rspec', require: false
+end
